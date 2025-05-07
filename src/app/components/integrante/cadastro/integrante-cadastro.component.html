@@ -1,0 +1,58 @@
+<p-card class="w-full">
+
+  <form [formGroup]="formulario">
+    <p-fluid class="flex flex-col md:flex-row gap-8 mb-5">
+
+    <div class="flex flex-col gap-6 w-full sm:w-auto">
+      <!-- Nome -->
+      <div class="flex-auto gap-6">
+        <label class="flex items-center">Descrição</label>
+        <input pInputText formControlName="nome" class="w-full"/>
+        <small *ngIf="isCampoInvalido('nome')">Campo obrigatório!</small>
+      </div>
+
+      <!-- Grupo funcao -->
+      <div formGroupName="funcao" class="gap-6">
+
+        <!-- Franquia -->
+        <div class="flex-auto" formGroupName="franquia">
+          <label class="flex items-center">Franquia</label>
+          <p-select [options]="franquias" [showClear]="true"  optionLabel="descricao"
+            formControlName="id"
+            [emptyMessage]="'Sem resultados'"
+            optionValue="id"
+            placeholder="Selecione a franquia"
+            class="w-full"
+          />
+          <small *ngIf="isCampoInvalido('funcao.franquia.id')">Campo obrigatório!</small>
+        </div>
+
+        <!-- Função -->
+        <div class="flex-auto">
+          <label class="flex items-center">Função</label>
+          <p-select [options]="funcoes" [showClear]="true"
+                    [emptyMessage]="'Sem resultados'"
+                    optionLabel="descricao" formControlName="id" optionValue="id"
+            placeholder="Selecione a função" class="w-full"/>
+          <small *ngIf="isCampoInvalido('funcao.id')">Campo obrigatório!</small>
+        </div>
+      </div>
+    </div>
+    </p-fluid>
+
+      <p-button label="Salvar"
+                [loading]="salvando"
+                class="mt-4"
+                [className]="'mt-6'"
+                styleClass="mt-4"
+                icon="pi pi-save"
+                (onClick)="salvar()">
+      </p-button>
+  </form>
+<div class="mb-6">
+  a
+</div>
+  <div>
+    b
+  </div>
+</p-card>

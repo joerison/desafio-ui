@@ -1,0 +1,41 @@
+<p-card [header]="'Listagem de Integrantes'">
+
+  <div class="grid grid-cols-12 gap-4">
+    <div class="col">
+      <p-button icon="pi pi-plus" label="Novo Integrante" (onClick)="abrirModalNovoIntegrante()" />
+    </div>
+  </div>
+
+  <div class="p-fluid p-formgrid grid grid-cols-12 gap-4">
+    <div class="col-span-12 md:col-span-12">
+      <p-table [value]="integrantes" [tableStyle]="{ 'min-width': '50rem' }"  [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10]">
+        <ng-template  #header>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Franquia</th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-product>
+          <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.nome }}</td>
+            <td>{{ product.funcao?.descricao }}</td>
+            <td>{{ product.funcao?.franquia?.descricao }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+    </div>
+
+  </div>
+
+</p-card>
+
+<p-dialog [(visible)]="cadastroIntegranteDialog" [style]="{ width: '400px'}"
+          header="{{ 'Novo Integrante' }}" [modal]="true">
+  <ng-template pTemplate="content">
+    <app-integrante-cadastro></app-integrante-cadastro>
+  </ng-template>
+</p-dialog>
