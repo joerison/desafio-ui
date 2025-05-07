@@ -1,0 +1,21 @@
+<p-toast></p-toast>
+
+<p-card [header]="'Mais comuns'">
+
+  <p-card [header]="'Integrante mais usado'">
+    <p-datepicker
+      class="w-full"
+      [formControl]="data"
+      [appendTo]="'body'"
+      selectionMode="range"
+      dateFormat="dd/mm/yy"
+      [showIcon]="true"
+    ></p-datepicker>
+    <p-button icon="pi pi-search" label="Consultar" [style]="{'width': '120px'}" (onClick)="integranteMaisUsado()" />
+    <div *ngIf="maisUsado">
+      Integrante mais usado, <b>nome: {{maisUsado.nome}}, função: {{maisUsado.funcao.descricao}}</b>
+    </div>
+  </p-card>
+
+</p-card>
+

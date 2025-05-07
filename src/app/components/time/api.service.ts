@@ -23,6 +23,10 @@ export class ApiService {
     return this.httpClient.get(`${this.url}/contagem-por-funcao`, {params: params});
   }
 
+  integranteMaisUsado(params: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/integrante-mais-usado`, {params: params});
+  }
+
 }
 
 interface DataParams {
