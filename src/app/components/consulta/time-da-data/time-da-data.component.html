@@ -2,16 +2,20 @@
 
 <p-card [header]="'Time da Data'">
 
-  <div class="grid grid-cols-12 gap-4">
-      <p-datepicker
-        class="w-full"
-        [formControl]="data"
-        [appendTo]="'body'"
-        dateFormat="dd/mm/yy"
-        [showIcon]="true"
-      ></p-datepicker>
-    <small *ngIf="isCampoDataInvalido()" class="text-red-600">Campo obrigatório!</small>
-    <p-button icon="pi pi-search" label="Consultar" [style]="{'width': '120px'}" (onClick)="consultarTimeDaData()" />
+  <div class="flex flex-col gap-6 w-full sm:w-auto">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+      <div class="flex-auto">
+        <p-datepicker
+          class="w-full"
+          [formControl]="data"
+          [appendTo]="'body'"
+          dateFormat="dd/mm/yy"
+          [showIcon]="true"
+        ></p-datepicker>
+        <small *ngIf="isCampoDataInvalido()" class="text-red-600">Campo obrigatório!</small>
+        <p-button icon="pi pi-search" label="Consultar" [style]="{'width': '120px'}" (onClick)="consultarTimeDaData()" />
+      </div>
+    </div>
   </div>
 
   <div class="p-fluid p-formgrid grid grid-cols-12 gap-4">

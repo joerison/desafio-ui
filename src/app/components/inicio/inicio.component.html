@@ -2,23 +2,41 @@
   <div class="col-span-12 xl:col-span-12">
     <p-card>
       <h1>Desafio DX - PJ</h1>
-
-      <div class="flex flex-col sm:flex-row gap-6">
-        <div class="flex-auto">
-          <app-integrante-pesquisa></app-integrante-pesquisa>
-        </div>
-        <div class="flex-auto">
-          <app-time-pesquisa></app-time-pesquisa>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-6">
-        <div class="flex-auto">
-          <app-time-da-data></app-time-da-data>
-        </div>
-        <div class="flex-auto">
-        </div>
-      </div>
+      <p-tabs value="0">
+        <p-tablist>
+          <p-tab value="0">Cadastros</p-tab>
+          <p-tab value="1">Pesquisas</p-tab>
+        </p-tablist>
+        <p-tabpanels>
+          <p-tabpanel value="0">
+            <div class="flex flex-col sm:flex-row gap-6">
+              <div class="flex-auto">
+                <app-integrante-pesquisa></app-integrante-pesquisa>
+              </div>
+              <div class="flex-auto">
+                <app-time-pesquisa></app-time-pesquisa>
+              </div>
+            </div>
+          </p-tabpanel>
+          <p-tabpanel value="1">
+            <div class="flex flex-col sm:flex-row gap-6 mt-4">
+              <div class="flex-auto">
+                <app-time-da-data></app-time-da-data>
+              </div>
+              <div class="flex-auto">
+                <app-contagem-por-franquia></app-contagem-por-franquia>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-6 mt-4">
+              <div class="flex-auto">
+                <app-contagem-por-funcao></app-contagem-por-funcao>
+              </div>
+              <div class="flex-auto">
+              </div>
+            </div>
+          </p-tabpanel>
+        </p-tabpanels>
+      </p-tabs>
     </p-card>
   </div>
 </div>

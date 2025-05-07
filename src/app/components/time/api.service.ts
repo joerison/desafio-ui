@@ -15,5 +15,18 @@ export class ApiService {
     return this.httpClient.get(`${this.url}/time-da-data`, {params: params});
   }
 
+  contagemPorFranquia(params: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/contagem-por-franquia`, {params: params});
+  }
+
+  contagemPorFuncao(params: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/contagem-por-funcao`, {params: params});
+  }
+
+}
+
+interface DataParams {
+  dataInicio?: string;
+  dataFim?: string;
 }
 
