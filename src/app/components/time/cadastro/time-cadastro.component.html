@@ -1,0 +1,42 @@
+<p-card class="w-full">
+
+  <form [formGroup]="formulario">
+    <p-fluid class="flex flex-col md:flex-row gap-8 mb-5">
+
+      <div class="flex flex-col w-full gap-6">
+        <!-- Nome -->
+        <div class="flex-auto">
+          <label class="flex items-center">Data</label>
+          <p-datepicker
+            formControlName="data"
+            class="w-full"
+            [appendTo]="'body'"
+            dateFormat="dd/mm/yy"
+            [showIcon]="true"
+          ></p-datepicker>
+          <small *ngIf="isCampoInvalido('data')" class="text-red-600">Campo obrigatório!</small>
+        </div>
+
+        <div class="flex-auto">
+          <p-pick-list [source]="sourceIntegrantes" [target]="targetIntegrantes"
+                       [dragdrop]="true"
+                       [responsive]="true" [sourceStyle]="{ height: '30rem' }"
+                       [targetStyle]="{ height: '30rem' }" breakpoint="1400px">
+            <ng-template let-item #item>
+              {{ item.nome }}
+            </ng-template>
+          </p-pick-list>
+          <small *ngIf="enviado && targetIntegrantes.length <= 0" class="text-red-600">Selecione ao menos um Integrante!</small>
+        </div>
+      </div>
+    </p-fluid>
+
+    <p-button label="Salvar"
+              [loading]="salvando"
+              class="mt-4"
+              icon="pi pi-save"
+              (onClick)="salvar()">
+    </p-button>
+  </form>
+
+</p-card>
