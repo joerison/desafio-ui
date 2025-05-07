@@ -1,8 +1,10 @@
+<p-toast></p-toast>
+
 <p-card [header]="'Listagem de Integrantes'">
 
   <div class="grid grid-cols-12 gap-4">
     <div class="col">
-      <p-button icon="pi pi-plus" label="Novo Integrante" (onClick)="abrirModalNovoIntegrante()" />
+      <p-button icon="pi pi-plus" label="Novo Integrante" [style]="{'width': '200px'}" (onClick)="abrirModalNovoIntegrante()" />
     </div>
   </div>
 
@@ -36,6 +38,6 @@
 <p-dialog [(visible)]="cadastroIntegranteDialog" [style]="{ width: '400px'}"
           header="{{ 'Novo Integrante' }}" [modal]="true">
   <ng-template pTemplate="content">
-    <app-integrante-cadastro></app-integrante-cadastro>
+    <app-integrante-cadastro (integranteCadastradoEvent)="novoIntegranteCadastrado()"></app-integrante-cadastro>
   </ng-template>
 </p-dialog>
