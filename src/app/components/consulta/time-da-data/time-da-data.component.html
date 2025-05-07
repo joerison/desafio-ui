@@ -1,0 +1,43 @@
+<p-toast></p-toast>
+
+<p-card [header]="'Time da Data'">
+
+  <div class="grid grid-cols-12 gap-4">
+      <p-datepicker
+        class="w-full"
+        [formControl]="data"
+        [appendTo]="'body'"
+        dateFormat="dd/mm/yy"
+        [showIcon]="true"
+      ></p-datepicker>
+    <small *ngIf="isCampoDataInvalido()" class="text-red-600">Campo obrigatório!</small>
+    <p-button icon="pi pi-search" label="Consultar" [style]="{'width': '120px'}" (onClick)="consultarTimeDaData()" />
+  </div>
+
+  <div class="p-fluid p-formgrid grid grid-cols-12 gap-4">
+    <div class="col-span-12 md:col-span-12">
+      <p-table [value]="integrantes" [tableStyle]="{ 'min-width': '50rem' }"  [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5, 10]">
+        <ng-template  #header>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Franquia</th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-product>
+          <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.nome }}</td>
+            <td>{{ product.funcao.descricao }}</td>
+            <td>{{ product.funcao.franquia.descricao }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+    </div>
+
+  </div>
+
+</p-card>
+

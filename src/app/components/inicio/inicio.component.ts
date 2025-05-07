@@ -7,13 +7,14 @@ import {IntegranteCadastroComponent} from '../integrante/cadastro/integrante-cad
 import {IntegranteService} from '../integrante/integrante.service';
 import {IntegrantePesquisaComponent} from '../integrante/pesquisa/integrante-pesquisa.component';
 import {TimePesquisaComponent} from '../time/pesquisa/time-pesquisa.component';
+import {TimeDaDataComponent} from '../consulta/time-da-data/time-da-data.component';
 
 @Component({
     selector: 'app-inicio',
     templateUrl: './inicio.component.html',
     styleUrls: ['./inicio.component.css'],
     providers: [MessageService, ConfirmationService, IntegranteService],
-  imports: [Card, TableModule, IntegranteCadastroComponent, IntegrantePesquisaComponent, TimePesquisaComponent]
+  imports: [Card, TableModule, IntegranteCadastroComponent, IntegrantePesquisaComponent, TimePesquisaComponent, TimeDaDataComponent]
 })
 export class InicioComponent implements OnInit {
 

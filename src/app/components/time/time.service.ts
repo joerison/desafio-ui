@@ -5,24 +5,24 @@ import {Observable} from "rxjs";
 @Injectable()
 export class TimeService {
 
-    url: string;
+  url: string;
 
-    constructor(private httpClient: HttpClient) {
-        this.url = `api/time`;
-    }
+  constructor(private httpClient: HttpClient) {
+    this.url = `api/time`;
+  }
 
-    listar(): Observable<any> {
-        return this.httpClient.get(`${this.url}`);
-    }
+  listar(): Observable<any> {
+    return this.httpClient.get(`${this.url}`);
+  }
 
-    salvar(time: any) {
-        return this.httpClient.post(`${this.url}`, time);
-    }
+  salvar(time: any) {
+    return this.httpClient.post(`${this.url}`, time);
+  }
 }
 
 
 export interface Time {
-    id: string;
-    nome?: string;
-    integrantes?: any;
+  id: string;
+  nome?: string;
+  integrantes?: any;
 }
