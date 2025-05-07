@@ -10,7 +10,8 @@ import {Button} from 'primeng/button';
 import {Fluid} from 'primeng/fluid';
 import {DatePicker} from 'primeng/datepicker';
 import {PrimeNG} from 'primeng/config';
-import {PickList} from 'primeng/picklist';
+import { PickListModule } from 'primeng/picklist';
+
 import {IntegranteService} from '../../integrante/integrante.service';
 
 @Component({
@@ -24,7 +25,7 @@ import {IntegranteService} from '../../integrante/integrante.service';
     Button,
     Fluid,
     DatePicker,
-    PickList
+    PickListModule
   ],
   providers: [TimeService, FranquiaService],
 })
@@ -88,6 +89,7 @@ export class TimeCadastroComponent implements OnInit {
 
     let time: any = { ...this.formulario?.getRawValue() };
     time.integrantes = this.targetIntegrantes;
+    console.log(this.targetIntegrantes);
     this.salvando = true;
     this.salvarTime(time)
 
@@ -102,7 +104,6 @@ export class TimeCadastroComponent implements OnInit {
       }))
       .subscribe((data: any)=> {
         this.formulario.reset();
-        this.targetIntegrantes = []
         this.salvando = false;
         this.enviado = false;
         this.timeCadastradoEvent.emit({sucesso: true, mensagem: 'Time cadastrado com sucesso!'});

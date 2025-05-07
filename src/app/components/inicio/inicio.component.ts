@@ -12,13 +12,16 @@ import {ContagemPorFranquiaComponent} from '../consulta/contagem-por-franquia/co
 import {Tab, TabList, TabPanel, TabPanels, Tabs} from 'primeng/tabs';
 import {ContagemPorFuncaoComponent} from '../consulta/contagem-por-funcao/contagem-por-funcao.component';
 import {IntegranteMaisUsadoComponent} from '../consulta/mais-comum/integrante-mais-usado/integrante-mais-usado.component';
+import {TimeMaisComumComponent} from '../consulta/mais-comum/time-mais-comum/time-mais-comum.component';
+import {FuncaoMaisComumComponent} from '../consulta/mais-comum/funcao-mais-comum/funcao-mais-comum.component';
+import {FranquiaMaisFamosaComponent} from '../consulta/mais-comum/franquia-mais-famosa/franquia-mais-famosa.component';
 
 @Component({
     selector: 'app-inicio',
     templateUrl: './inicio.component.html',
     styleUrls: ['./inicio.component.css'],
     providers: [MessageService, ConfirmationService, IntegranteService],
-  imports: [Card, TableModule, IntegranteCadastroComponent, IntegrantePesquisaComponent, TimePesquisaComponent, TimeDaDataComponent, ContagemPorFranquiaComponent, Tabs, TabList, Tab, TabPanels, TabPanel, ContagemPorFuncaoComponent, IntegranteMaisUsadoComponent]
+  imports: [Card, TableModule, IntegranteCadastroComponent, IntegrantePesquisaComponent, TimePesquisaComponent, TimeDaDataComponent, ContagemPorFranquiaComponent, Tabs, TabList, Tab, TabPanels, TabPanel, ContagemPorFuncaoComponent, IntegranteMaisUsadoComponent, TimeMaisComumComponent, FuncaoMaisComumComponent, FranquiaMaisFamosaComponent]
 })
 export class InicioComponent implements OnInit {
 

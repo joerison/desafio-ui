@@ -1,0 +1,18 @@
+<p-toast></p-toast>
+
+<p-card [header]="'Função mais comum'">
+  <p-datepicker
+    class="w-full"
+    [formControl]="data"
+    [appendTo]="'body'"
+    selectionMode="range"
+    dateFormat="dd/mm/yy"
+    [showIcon]="true"
+  ></p-datepicker>
+  <p-button icon="pi pi-search" label="Consultar" [style]="{'width': '120px'}" (onClick)="funcaoMaisComum()" />
+  <div *ngIf="funcao">
+    Resultado: <b>{{funcao.descricao}} </b>
+  </div>
+</p-card>
+
+

@@ -1,0 +1,16 @@
+<p-toast></p-toast>
+
+<p-card [header]="'Franquia mais famosa'">
+  <p-datepicker
+    class="w-full"
+    [formControl]="data"
+    [appendTo]="'body'"
+    selectionMode="range"
+    dateFormat="dd/mm/yy"
+    [showIcon]="true"
+  ></p-datepicker>
+  <p-button icon="pi pi-search" label="Consultar" [style]="{'width': '120px'}" (onClick)="franquiaMaisFamosa()" />
+  <div *ngIf="franquia">
+    Resultado: <b> {{franquia.descricao}}</b>
+  </div>
+</p-card>

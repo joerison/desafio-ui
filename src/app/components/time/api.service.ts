@@ -27,6 +27,18 @@ export class ApiService {
     return this.httpClient.get(`${this.url}/integrante-mais-usado`, {params: params});
   }
 
+  franquiaMaisFamosa(params: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/franquia-mais-famosa`, {params: params});
+  }
+
+  funcaoMaisComum(params: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/funcao-mais-comum`, {params: params});
+  }
+
+  timeMaisComum(params: any): Observable<any> {
+    return this.httpClient.get(`${this.url}/time-mais-comum`, {params: params});
+  }
+
 }
 
 interface DataParams {
